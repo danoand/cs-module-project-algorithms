@@ -3,9 +3,19 @@ Input: a List of integers
 Returns: a List of integers
 '''
 def moving_zeroes(arr):
-    # Your code here
+    # Declare two working lists (arrays)
+    wrk_arr1 = []
+    wrk_arr2 = []
 
-    pass
+    # Iterate through the array
+    for elm in arr:
+        if elm != 0:
+            wrk_arr1.append(elm)
+        else:
+            wrk_arr2.append(elm)
+
+    # Return a list of nonzero and zero elements (in that order)
+    return [*wrk_arr1, *wrk_arr2]
 
 
 if __name__ == '__main__':
