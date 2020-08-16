@@ -3,12 +3,26 @@ Input: an integer
 Returns: an integer
 '''
 def eating_cookies(n):
-    # Your code here
+    # Basic Scenarios+---
+    if n == 0:
+        return 0
 
-    pass
+    if n == 1:
+        return 1
 
-if __name__ == "__main__":
-    # Use the main function here to test out your implementation
-    num_cookies = 5
+    if n == 2:
+        # 1. Eat 2 cookies
+        # 1. Eat 1 cookie and then 1 cookie
+        return 1 + 1
 
-    print(f"There are {eating_cookies(num_cookies)} ways for Cookie Monster to each {num_cookies} cookies")
+    if n == 3:
+        return 4
+
+    ctr = 1
+    ctr = ctr + eating_cookies(3) + eating_cookies(n-3)
+    ctr = ctr + eating_cookies(2) + eating_cookies(n-2)
+
+    return ctr
+
+print(eating_cookies(10))
+
